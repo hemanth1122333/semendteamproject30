@@ -1,0 +1,113 @@
+/* Basic page layout */
+:root{
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --accent: #2b6cb0;
+  --accent-dark: #224d7a;
+  --muted: #6b7280;
+}
+
+* { box-sizing: border-box; }
+html,body,#root { height: 100%; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg); color: #111827; }
+
+/* App wrapper */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px;
+}
+
+/* Title */
+.app-header {
+  width: 100%;
+  max-width: 820px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: linear-gradient(90deg, rgba(43,108,176,0.08), rgba(34,77,122,0.04));
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.2px;
+  color: var(--accent-dark);
+}
+
+/* Card */
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--card);
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(9,30,66,0.06);
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+/* Form */
+.form-title {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.form-row {
+  margin-bottom: 12px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(15,23,42,0.08);
+  background: #fbfdff;
+  font-size: 14px;
+  outline: none;
+}
+input::placeholder { color: var(--muted); }
+
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+.button:active { transform: translateY(1px); }
+.button.secondary {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1px solid rgba(43,108,176,0.12);
+}
+
+/* small helper text */
+.helper {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* inline link */
+.link {
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+}
+.link:hover { text-decoration: underline; }
+
+/* simple responsive spacing */
+@media (max-width: 520px){
+  .app-header h1 { font-size: 20px; }
+  .card { padding: 16px; }
+}
